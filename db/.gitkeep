@@ -1,0 +1,3 @@
+# Runtime volume mount target. The SQLite database (finally.db) is created here
+# by the backend at runtime and is gitignored. This file keeps the directory in
+# version control.
