@@ -60,10 +60,9 @@ ENV PYTHONPATH=/app
 ENV PYTHONUNBUFFERED=1
 ENV PORT=8000
 
-# The SQLite database lives here at runtime (db/finally.db resolves to
-# /app/db/finally.db) and is backed by a named volume for persistence.
+# Railway mounts a persistent volume at /app/db (configured in Railway dashboard).
+# The SQLite database (db/finally.db) persists there across deploys.
 RUN mkdir -p /app/db
-VOLUME ["/app/db"]
 
 EXPOSE 8000
 
