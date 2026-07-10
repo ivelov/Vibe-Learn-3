@@ -22,7 +22,7 @@ if (-not (Test-Path ".env")) {
 }
 
 Write-Host "Building FinAlly Docker image ($Image)..." -ForegroundColor Yellow
-docker build -t $Image .
+docker build -t $Image -f backend/Dockerfile .
 
 Write-Host "Removing any existing '$Container' container..." -ForegroundColor Yellow
 try { docker rm -f $Container 2>$null } catch { }
