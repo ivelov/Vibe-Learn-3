@@ -1,0 +1,45 @@
+# Keep the build context small and deterministic.
+
+# VCS / editor
+.git
+.gitignore
+.claude
+.vscode
+.idea
+
+# Docs & planning (not needed in the image)
+planning
+README.md
+LICENSE
+*.md
+
+# Secrets & local env (env is injected at runtime via --env-file)
+.env
+.env.*
+!.env.example
+
+# Python build artifacts / caches
+**/__pycache__
+**/*.py[cod]
+**/.pytest_cache
+**/.ruff_cache
+**/.mypy_cache
+**/.coverage
+**/htmlcov
+backend/.venv
+.venv
+
+# Node artifacts (frontend deps are installed inside the builder stage)
+**/node_modules
+frontend/.next
+frontend/out
+frontend/build
+
+# Runtime database & host volume target
+db/*.db
+db/*.db-journal
+db/*.db-wal
+
+# Test scaffolding not needed by the app image
+test
+scripts

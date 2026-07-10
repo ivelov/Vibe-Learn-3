@@ -1,0 +1,14 @@
+{
+  "name": "finally-e2e",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Playwright E2E tests for FinAlly. In the docker test stack these run via the mcr.microsoft.com/playwright image (browsers preinstalled); for local runs install deps first.",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "install:browsers": "playwright install --with-deps chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  }
+}

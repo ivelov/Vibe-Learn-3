@@ -2,10 +2,16 @@
 
 ## Project Setup
 
+This project uses **poetry 2.x** for Python dependency management — Poetry 1.7.1 does not support PEP 621 `[project]` format. Add deps with `poetry add <pkg>` and run commands with `poetry run <cmd>`.
+
 ```bash
 cd backend
-uv sync --extra dev   # Install all dependencies including test/lint tools
+poetry install              # Install all deps from poetry.lock
+poetry add <pkg>            # Add a new dependency
+poetry add --group dev pytest httpx ruff  # Add a dev dependency
 ```
+
+> Note: `package-mode = false` and `requires-python = ">=3.12,<4.0"` are set in pyproject.toml. Use `poetry install --no-root` if you see "no file/folder found for package finally-backend". The old `uv.lock` is removed; use `poetry.lock` only.
 
 ## Market Data API
 
@@ -47,13 +53,13 @@ Default tickers: AAPL, GOOGL, MSFT, AMZN, TSLA, NVDA, META, JPM, V, NFLX. Seed p
 ## Running Tests
 
 ```bash
-uv run --extra dev pytest -v              # All tests
-uv run --extra dev pytest --cov=app       # With coverage
-uv run --extra dev ruff check app/ tests/ # Lint
+poetry run pytest -v              # All tests
+poetry run pytest --cov=app       # With coverage
+poetry run ruff check app/ tests/ # Lint
 ```
 
 ## Demo
 
 ```bash
-uv run market_data_demo.py   # Live terminal dashboard with simulated prices
+poetry run python market_data_demo.py   # Live terminal dashboard with simulated prices
 ```
