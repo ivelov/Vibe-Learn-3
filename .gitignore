@@ -1,6 +1,5 @@
 # FinAlly build/test artifacts
-# Frontend static export copied into the backend at Docker build time.
-/backend/static/
+# Backend Dockerfile output served as static files (not tracked in git).
 # Playwright MCP scratch output (screenshots, snapshots, console logs).
 /.playwright-mcp/
 
