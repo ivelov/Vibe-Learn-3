@@ -22,7 +22,7 @@ if [ ! -f .env ]; then
 fi
 
 echo "Building FinAlly Docker image ($IMAGE)..."
-docker build -t "$IMAGE" -f backend/Dockerfile .
+docker build -t "$IMAGE" .
 
 echo "Removing any existing '$CONTAINER' container..."
 docker rm -f "$CONTAINER" >/dev/null 2>&1 || true

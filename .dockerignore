@@ -32,7 +32,6 @@ backend/.venv
 # Node artifacts (frontend deps are installed inside the builder stage)
 **/node_modules
 frontend/.next
-frontend/out
 frontend/build
 
 # Runtime database & host volume target
